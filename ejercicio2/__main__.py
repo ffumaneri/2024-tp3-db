@@ -33,7 +33,7 @@ def create_data():
 def get_alumnos():
     ##TODO: Hacer query para obtener todas las aulas
     session = session_factory()
-    query = session.query(Aula).options(joinedload(Aula.alumno))  # Eager load Alumno instances
+    query = session.query(Aula).options(joinedload(Aula.alumno)) 
     session.close()
     return query.all()
 
