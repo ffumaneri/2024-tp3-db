@@ -17,7 +17,7 @@ pip install -r requirements.txt
       -e POSTGRES_PASSWORD=dbpassword \
       -e POSTGRES_USER=dbuser \
       -e POSTGRES_DB=tp3-db \
-      -p 5432:5432 \
+      -p 5433:5432 \
       -d postgres
   ```
 * Setear en `common.py` el string de conexión. `engine = create_engine('postgresql://dbuser:dbpassword@localhost:5432/tp3-db')`
