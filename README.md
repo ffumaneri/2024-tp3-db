@@ -44,3 +44,6 @@ Completar el código que está comentado en `alumno.py` y `aula.py`. En `__main_
 Usar la función [relationship](https://docs.sqlalchemy.org/en/20/orm/basic_relationships.html#one-to-many) de *sqlalchemy* en la clase *Aula* ya que un aula tiene muchos (many) alumnos.
 
 Para ejecutar el ejercicio correr `python -m ejercicio2`
+
+Resultado
+![Resultado de los dos ejercicios](TPquerys.png)
