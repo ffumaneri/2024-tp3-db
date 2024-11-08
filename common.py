@@ -4,7 +4,6 @@ from sqlalchemy.orm import sessionmaker
 
 DATABASE_URL = "postgresql+psycopg2://postgres:1234@localhost:5432/tplab?client_encoding=utf8"
 engine = create_engine(DATABASE_URL, connect_args={"client_encoding": "utf8"})
-# use session_factory() to get a new Session
 Session = sessionmaker(bind=engine)
 
 Base = declarative_base()

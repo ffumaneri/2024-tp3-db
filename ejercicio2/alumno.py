@@ -13,4 +13,4 @@ class Alumno(Base):
 
     def __init__(self, nombre, aula):
         self.nombre = nombre
-        self.aula = aula  # Asigna el objeto aula, no el id.
+        self.aula = aula  

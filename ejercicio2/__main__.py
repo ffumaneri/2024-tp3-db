@@ -5,30 +5,25 @@ from .aula import Aula
 def create_data():
     session = session_factory()
 
-    # Crear 2 aulas primero
     aula1 = Aula(nombre="aula 1")
     aula2 = Aula(nombre="aula 2")
     
-    # Añadir las aulas a la sesión primero para que se guarden en la base de datos
     session.add(aula1)
     session.add(aula2)
-    session.commit()  # Hacer commit para que se generen los ID de las aulas
+    session.commit()  
 
-    # Ahora puedes crear los alumnos y asignarles las aulas
     alumno1 = Alumno(nombre="Juan", aula=aula1)
     alumno2 = Alumno(nombre="Pedro", aula=aula1)
     alumno3 = Alumno(nombre="Maria", aula=aula2)
     alumno4 = Alumno(nombre="Luis", aula=aula2)
     alumno5 = Alumno(nombre="Carlos", aula=aula2)
 
-    # Añadir los alumnos a la sesión
     session.add(alumno1)
     session.add(alumno2)
     session.add(alumno3)
     session.add(alumno4)
     session.add(alumno5)
 
-    # Confirmar los cambios en la base de datos
     session.commit()
     session.close()
 
