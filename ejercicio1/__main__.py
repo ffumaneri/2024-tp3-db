@@ -34,4 +34,4 @@ if __name__ == "__main__":
     oficinas = get_oficinas()
 
     for oficina in oficinas:
-        print(f'{oficina.nombre} tiene como jefe {oficina.jefe.nombre}')
+        print(f"{oficina.nombre} tiene como jefe {oficina.jefe.nombre}")
