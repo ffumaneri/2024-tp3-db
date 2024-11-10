@@ -4,7 +4,6 @@ from .jefe import Jefe
 from .oficina import Oficina
 from common import session_factory
 
-
 def create_data():
     session = session_factory()
     juan = Jefe("Juan Perez")
