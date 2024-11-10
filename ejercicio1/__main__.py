@@ -1,8 +1,7 @@
-from datetime import date
-
 from .jefe import Jefe
 from .oficina import Oficina
 from common import session_factory
+
 
 
 def create_data():
@@ -27,6 +26,12 @@ def get_oficinas():
     return query.all()
 
 
+def get_jefes():
+    session = session_factory()
+    query = session.query(Jefe)
+    session.close()
+    return query.all()
+
 if __name__ == "__main__":
     people = get_oficinas()
     if len(people) == 0:
@@ -34,4 +39,4 @@ if __name__ == "__main__":
     oficinas = get_oficinas()
 
     for oficina in oficinas:
-        print(f'{oficina.nombre} tiene como jefe {oficina.jefe.nombre}')
+        print(f'{oficina.nombre} tiene como jefe a {oficina.jefe.nombre}')

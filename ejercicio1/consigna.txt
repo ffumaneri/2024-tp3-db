@@ -1,0 +1,7 @@
+Completar el código que está comentado en jefe.py y oficina.py
+
+Es una relación 1 a 1. Quiere decir que la oficina tiene un ID de jefe. Y el jefe tiene una relación hacia oficina.
+
+Usar la función relationship de sqlalchemy en la clase Jefe
+
+Para ejecutar el ejercicio correr python -m ejercicio1
