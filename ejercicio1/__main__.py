@@ -1,5 +1,3 @@
-from datetime import date
-
 from .jefe import Jefe
 from .oficina import Oficina
 from common import session_factory
@@ -18,7 +16,6 @@ def create_data():
 
     session.commit()
     session.close()
-
 
 def get_oficinas():
     session = session_factory()
