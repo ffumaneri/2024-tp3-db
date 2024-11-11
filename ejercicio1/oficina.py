@@ -1,4 +1,5 @@
-from sqlalchemy import Column, String, Date, Integer, Numeric
+from sqlalchemy import Column, String, Date, Integer, Numeric,ForeignKey
+from sqlalchemy.orm import relationship
 
 from common import Base
 
@@ -10,7 +11,9 @@ class Oficina(Base):
 
     id=Column(Integer, primary_key=True)
     nombre = Column(String)
-    jefe = Column(Integer)
+    
+    jefe_id = Column(Integer, ForeignKey('jefe.id'), unique=True)
+    jefe = relationship("Jefe", back_populates="oficina")
 
     def __init__(self, nombre, jefe):
         self.nombre = nombre
