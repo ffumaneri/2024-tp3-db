@@ -1,19 +1,39 @@
 from datetime import date
-
-from .jefe import Jefe
-from .oficina import Oficina
+from sqlalchemy.orm import joinedload
 from common import session_factory
+from ejercicio2.alumno import Alumno
+from ejercicio2.aula import Aula
 
 
 def create_data():
-    ##TODO: crear 5 alumnos
+    session = session_factory()
+    
     ##TODO: crear 2 aulas
-    pass #borrar esto cuando agreguen codigo
+    aula1 = Aula(nombre="Aula 1")
+    session.add(aula1)
+    aula2 = Aula(nombre="Aula 2")
+    session.add(aula2)
 
+    ##TODO: crear 5 alumnos
+    alumno1 = Alumno(nombre="Alphonse Elric", aula=aula1)
+    alumno2 = Alumno(nombre="King Bradley", aula=aula1)
+    alumno3 = Alumno(nombre="Roy Mustang", aula=aula2)
+    alumno4 = Alumno(nombre="Hohenheim", aula=aula2)
+    alumno5 = Alumno(nombre="Edward Elric", aula=aula1)
+    session.add_all([alumno1, alumno2, alumno3, alumno4, alumno5])
+
+    session.commit()
+    session.close()
+    
 
 def get_alumnos():
+    session = session_factory()
+    
     ##TODO: Hacer query para obtener todas las aulas
-    pass #borrar esto cuando agreguen codigo
+    alumnos = session.query(Alumno).options(joinedload(Alumno.aula)).all()
+    session.close()
+    
+    return alumnos
 
 
 
