@@ -13,6 +13,8 @@ def create_data():
     oficina1 = Oficina("oficina 1", juan)
     oficina2 = Oficina("oficina 2", pedro)
 
+    session.add(juan)
+    session.add(pedro)
     session.add(oficina1)
     session.add(oficina2)
 
@@ -22,14 +24,14 @@ def create_data():
 
 def get_oficinas():
     session = session_factory()
-    query = session.query(Oficina).all()
+    query = session.query(Oficina)
     session.close()
-    return query.all()
+    return query
 
 
 if __name__ == "__main__":
-    people = get_oficinas()
-    if len(people) == 0:
+    oficinas = get_oficinas()
+    if len(oficinas.all()) == 0:
         create_data()
     oficinas = get_oficinas()
 

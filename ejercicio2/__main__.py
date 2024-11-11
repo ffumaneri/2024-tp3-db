@@ -8,15 +8,15 @@ from ejercicio2.aula import Aula
 def create_data():
     session = session_factory()
 
-    aula1 = Aula(nombre="aula 1")
-    aula2 = Aula(nombre="aula 2")
+    aula1 = Aula(nombre="matematicas")
+    aula2 = Aula(nombre="ingles")
     
     session.add(aula1)
     session.add(aula2)
     session.commit()  
 
     session.add(Alumno(nombre="Lautaro", aula=aula1))
-    session.add( Alumno(nombre="ezequiel", aula=aula1))
+    session.add(Alumno(nombre="ezequiel", aula=aula1))
     session.add(Alumno(nombre="hernesto", aula=aula2))
     session.add(Alumno(nombre="jose", aula=aula2))
     session.add(Alumno(nombre="Carlitos", aula=aula2))
