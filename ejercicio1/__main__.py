@@ -13,6 +13,9 @@ def create_data():
     oficina1 = Oficina("oficina 1", juan)
     oficina2 = Oficina("oficina 2", pedro)
 
+    session.add(juan)
+    session.add(pedro)
+
     session.add(oficina1)
     session.add(oficina2)
 
