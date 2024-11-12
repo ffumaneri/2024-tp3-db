@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Date, Integer, Numeric
+from sqlalchemy import Column, String, Date, Integer, Numeric  
 
 from common import Base
 
