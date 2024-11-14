@@ -4,14 +4,13 @@ from .jefe import Jefe
 from .oficina import Oficina
 from common import session_factory
 
-
 def create_data():
     session = session_factory()
-    juan = Jefe("Juan Perez")
-    pedro = Jefe("Pedro Fernandez")
+    juan = Jefe('Juan Perez')
+    pedro = Jefe('Pedro Fernandez')
 
-    oficina1 = Oficina("oficina 1", juan)
-    oficina2 = Oficina("oficina 2", pedro)
+    oficina1 = Oficina('oficina 1', juan)
+    oficina2 = Oficina('oficina 2', pedro)
 
     session.add(oficina1)
     session.add(oficina2)
@@ -19,15 +18,13 @@ def create_data():
     session.commit()
     session.close()
 
-
 def get_oficinas():
     session = session_factory()
     query = session.query(Oficina)
     session.close()
     return query.all()
 
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     people = get_oficinas()
     if len(people) == 0:
         create_data()
