@@ -1,8 +1,6 @@
-from datetime import date
-
+from common import session_factory
 from .jefe import Jefe
 from .oficina import Oficina
-from common import session_factory
 
 
 def create_data():
@@ -12,6 +10,9 @@ def create_data():
 
     oficina1 = Oficina("oficina 1", juan)
     oficina2 = Oficina("oficina 2", pedro)
+
+    session.add(juan)
+    session.add(pedro)
 
     session.add(oficina1)
     session.add(oficina2)
