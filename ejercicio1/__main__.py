@@ -1,8 +1,6 @@
-from datetime import date
-
 from .jefe import Jefe
 from .oficina import Oficina
-from common import session_factory
+from common import session_factory, engine, Base
 
 
 def create_data():
@@ -28,6 +26,7 @@ def get_oficinas():
 
 
 if __name__ == "__main__":
+    Base.metadata.create_all(engine)
     people = get_oficinas()
     if len(people) == 0:
         create_data()
