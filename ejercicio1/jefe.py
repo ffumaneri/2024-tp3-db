@@ -1,12 +1,19 @@
-from sqlalchemy import Column, String, Date, Integer, Numeric
+from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy.orm import relationship, declarative_base
 
-from common import Base
-
+Base = declarative_base()
 
 class Jefe(Base):
     __tablename__ = 'jefe'
 
-    ##TODO: Insertar acá las columnas id, nombre y la relación con oficina
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    nombre = Column(String, nullable=False)
+
+    oficina = relationship("Oficina", back_populates="jefe", uselist=False)
 
     def __init__(self, nombre):
         self.nombre = nombre
+
+    def __repr__(self):
+        return f"<Jefe(id={self.id}, nombre='{self.nombre}')>"
+
