@@ -1,5 +1,4 @@
 from datetime import date
-
 from .jefe import Jefe
 from .oficina import Oficina
 from common import session_factory
