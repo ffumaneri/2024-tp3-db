@@ -1,0 +1,12 @@
+Hola profesor, tuve un problema al ejecutar el ejemplo dado:
+
+ImportError: DLL load failed while importing _psycopg: No se puede encontrar el módulo especificado.
+
+Este error no me deja ejecutar el programa, entiendo surge cuando busca conectar la bd de postgresql mediante la librería que usted nos facilita 
+en los requisitos "psycopg2-binary" no la encuentra y sucede el error.
+El problema es que la librería está instalada, y a pesar de investigar en distintos foros, probar reinstalar : python, la librería, postgresql y 
+todo en diferentes versiones por si era algo de compatibilidad no pude resolver el problema.
+
+A pesar de este contratiempo realice la consigna con el material que usted nos facilitó, entiendo que el programa debería funcionar si no fuera por el error de 
+la librería, voy a continuar investigando pero espero me comprenda si no todo esta 100% sin errores.
+
