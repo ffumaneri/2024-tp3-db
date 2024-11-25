@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 
-engine = create_engine('postgresql://postgres:dbcoding1$L_@localhost:5432/tp3-db')
+engine = create_engine('postgresql://postgres:Pgre1508@localhost:5432/tp3_db')
 
 # use session_factory() to get a new Session
 _SessionFactory = sessionmaker(bind=engine)
